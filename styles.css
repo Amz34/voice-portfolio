@@ -123,16 +123,19 @@ body::after{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;
 .mini-bar{flex:1;height:6px;border-radius:99px;background:rgba(120,160,220,.2);overflow:hidden;min-width:80px}
 .mini-bar i{display:block;height:100%;width:0;background:var(--grad);transition:width .18s linear}
 
-.hero-art{position:relative}
-.portrait{position:relative;border-radius:28px;overflow:hidden;border:1px solid var(--line-2);box-shadow:var(--shadow)}
-.portrait img{width:100%;height:auto}
-.portrait::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 45%,rgba(6,11,20,.72))}
-.badge{
-  position:absolute;z-index:2;padding:11px 17px;border-radius:999px;font-size:.95rem;font-weight:600;
-  background:rgba(6,11,20,.82);border:1px solid var(--line-2);backdrop-filter:blur(8px);white-space:nowrap;
-}
-.badge.b1{top:20px;left:-14px;color:var(--cyan)}
-.badge.b2{bottom:22px;right:-10px;color:var(--lime)}
+.hero-art{position:relative;display:flex;flex-direction:column;align-items:center}
+.portrait{position:relative;width:100%;max-width:430px;border-radius:50%;overflow:hidden;border:1px solid var(--line-2);
+  box-shadow:0 34px 96px -36px rgba(124,92,255,.55),var(--shadow)}
+.portrait img{display:block;width:100%;height:auto;aspect-ratio:1/1;object-fit:cover}
+/* stat chips float over the right of the portrait — never clipped, never over the face or the badge text */
+.hero-stats{position:absolute;z-index:3;top:50%;right:-6px;transform:translateY(-50%);
+  display:flex;flex-direction:column;align-items:flex-end;gap:12px}
+.badge{display:flex;align-items:center;gap:9px;padding:11px 16px;border-radius:999px;font-size:.95rem;font-weight:600;
+  background:rgba(6,11,20,.9);border:1px solid var(--line-2);backdrop-filter:blur(10px);white-space:nowrap;
+  box-shadow:0 16px 36px -14px rgba(0,0,0,.8)}
+.badge i{flex:0 0 auto;width:8px;height:8px;border-radius:50%;background:currentColor;box-shadow:0 0 12px currentColor}
+.badge.b1{color:var(--cyan)}
+.badge.b2{color:var(--lime)}
 
 /* ---------- marquee ---------- */
 .marquee{overflow:hidden;border-top:1px solid var(--line);border-bottom:1px solid var(--line);
@@ -406,4 +409,22 @@ body.panel-open{overflow:hidden}
   .stat b{font-size:2.05rem}
   .voice-avatar{width:140px;height:140px}
   .lang-toggle button{min-width:38px}
+}
+
+/* ---------- arabic section ---------- */
+.ar-section{direction:rtl;text-align:right;font-family:"Cairo","Noto Naskh Arabic","Segoe UI",Tahoma,system-ui,sans-serif}
+.ar-section .h2{line-height:1.5}
+.ar-section .lede{font-size:1.16rem;line-height:2.1;max-width:76ch;color:var(--ink-2)}
+.ar-section .card{text-align:right}
+.ar-section .card h3{font-size:1.22rem;line-height:1.6}
+.ar-section .card p{line-height:1.95}
+.ar-section .ar-cta{display:flex;flex-wrap:wrap;gap:14px;margin-top:34px}
+.ar-section .ar-cta .btn{font-family:inherit}
+.ar-section .ar-note{margin-top:24px;max-width:76ch;color:var(--muted);font-size:1rem;line-height:1.95}
+.ar-section .ar-note b{color:var(--cyan);font-weight:600}
+
+@media (max-width:720px){
+  /* phones: chips sit as a clean centred row under the portrait — never over the face or the badge text */
+  .hero-stats{position:static;transform:none;flex-direction:row;flex-wrap:wrap;justify-content:center;gap:10px;margin-top:16px}
+  .badge{font-size:.85rem;padding:9px 13px;gap:7px}
 }

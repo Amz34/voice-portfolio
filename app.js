@@ -242,7 +242,12 @@
   }
 
   Array.prototype.forEach.call(document.querySelectorAll("[data-open-agent]"), function (el) {
-    el.addEventListener("click", function (e) { e.preventDefault(); openPanel(); });
+    el.addEventListener("click", function (e) {
+      e.preventDefault();
+      var want = el.getAttribute("data-set-lang");
+      if (want && want !== lang) setLang(want);
+      openPanel();
+    });
   });
   if (closeBtn) closeBtn.addEventListener("click", closePanel);
   var agentFab = document.getElementById("agentFab");
