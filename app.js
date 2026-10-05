@@ -453,11 +453,9 @@
   var yr = document.getElementById("yr");
   if (yr) yr.textContent = String(new Date().getFullYear());
 
-  /* Start in the visitor's saved language */
-  var saved = "en";
-  try { saved = localStorage.getItem(LANG_KEY) || "en"; } catch (e) { saved = "en"; }
-  if (saved !== "en" && navigator.language && /^ar/i.test(navigator.language)) saved = "ar";
-  setLang(saved === "ar" ? "ar" : "en");
+  /* Each edition opens in its own page language: index.html = en, ar.html = ar */
+  var pageLang = (document.documentElement.getAttribute("lang") || "en").slice(0, 2).toLowerCase() === "ar" ? "ar" : "en";
+  setLang(pageLang);
 
   /* Expose for debugging / self-QA */
   window.__portfolio = {
