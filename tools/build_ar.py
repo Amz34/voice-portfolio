@@ -44,6 +44,10 @@ bykey = {norm(e["en"]): e["ar"] for e in MAP}
 src = re.sub(r">([^<>]{2,400})<",
              lambda m: ">" + (bykey.get(norm(html.unescape(m.group(1)))) or m.group(1)) + "<", src)
 
+# attribute copy (placeholder / title / aria-label / alt) — exact value match
+src = re.sub(r'="([^"<>]{3,200})"',
+             lambda m: '="' + (bykey.get(norm(html.unescape(m.group(1)))) or m.group(1)) + '"', src)
+
 # --- 3. this edition opens with the Arabic voice CV --------------------------------
 src = src.replace('<audio id="vcAudio" preload="metadata" src="assets/voice-cv.mp3">',
                   '<audio id="vcAudio" preload="metadata" src="assets/voice-cv-ar.mp3">')

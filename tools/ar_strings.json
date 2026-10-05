@@ -617,5 +617,41 @@
   "en": "WhatsApp",
   "ar": "واتساب",
   "all": true
+ },
+ {
+  "en": "Type a question…",
+  "ar": "اكتب سؤالك…"
+ },
+ {
+  "en": "Agent language",
+  "ar": "لغة المساعد"
+ },
+ {
+  "en": "Close",
+  "ar": "إغلاق"
+ },
+ {
+  "en": "Hold to speak",
+  "ar": "اضغط مع الاستمرار للتحدث"
+ },
+ {
+  "en": "Play voice CV",
+  "ar": "تشغيل السيرة الصوتية"
+ },
+ {
+  "en": "Send",
+  "ar": "إرسال"
+ },
+ {
+  "en": "Talk to my AI agent",
+  "ar": "تحدّث مع مساعدي الذكي"
+ },
+ {
+  "en": "Tap to speak",
+  "ar": "اضغط للتحدث"
+ },
+ {
+  "en": "Chat on واتساب",
+  "ar": "محادثة على واتساب"
  }
 ]
