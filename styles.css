@@ -345,3 +345,65 @@ body::after{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;
   *{animation:none!important;transition:none!important}
   .reveal{opacity:1;transform:none}
 }
+
+/* ---------- bilingual agent, private projects, mobile pass (v2) ---------- */
+.lang-toggle{display:flex;gap:4px;margin-left:auto;padding:3px;border-radius:999px;background:rgba(120,160,220,.14);border:1px solid var(--line-2)}
+.lang-toggle button{min-width:42px;height:32px;padding:0 10px;border-radius:999px;font:600 .88rem/1 var(--mono);color:var(--ink-2)}
+.lang-toggle button.on{background:var(--grad);color:#04121a}
+.ap-head .ap-close{margin-left:6px}
+.msg.rtl{direction:rtl;text-align:right;font-size:1.08rem;line-height:1.75}
+.work-links{display:flex;flex-wrap:wrap;gap:16px;align-items:center;margin-top:18px;font-weight:600}
+.work-links a{color:var(--cyan);font-size:1rem}
+.work-links a:hover{color:#fff}
+.work-links .btn{padding:11px 18px;font-size:1rem}
+.muted-note{color:var(--muted);font-weight:500;font-size:.98rem}
+.vc-lang{display:flex;gap:6px;margin-left:auto;padding:3px;border-radius:999px;background:rgba(120,160,220,.14);border:1px solid var(--line-2)}
+.vc-lang button{padding:8px 15px;border-radius:999px;font:600 .9rem/1 var(--mono);color:var(--ink-2);white-space:nowrap}
+.vc-lang button.on{background:var(--grad);color:#04121a}
+#vcText[dir=rtl]{text-align:right;font-size:1.14rem;line-height:1.95}
+body.panel-open{overflow:hidden}
+.section,[id]{scroll-margin-top:90px}
+
+@media (max-width:1000px){
+  .nav{flex-wrap:wrap;gap:12px;row-gap:2px;padding:10px 16px}
+  .brand{margin-right:auto}
+  .nav-cta{margin-left:auto}
+  .nav-links{display:flex;order:3;flex:1 1 100%;margin:0;gap:4px;flex-wrap:nowrap;overflow-x:auto;
+             -webkit-overflow-scrolling:touch;scrollbar-width:none;padding-bottom:2px}
+  .nav-links::-webkit-scrollbar{display:none}
+  .nav-links a{white-space:nowrap;font-size:.94rem;padding:8px 12px;background:rgba(120,160,220,.10)}
+}
+@media (max-width:720px){
+  .nav-links{display:none}
+}
+@media (max-width:720px){
+  body{font-size:17px}
+  .nav{gap:10px}
+  .brand-text{font-size:.98rem}
+  .agent-panel{width:100%;height:100dvh;max-height:100dvh;padding-bottom:env(safe-area-inset-bottom)}
+  .ap-head{padding:12px 14px;padding-top:calc(12px + env(safe-area-inset-top))}
+  .ap-log{padding:16px 14px;gap:12px;-webkit-overflow-scrolling:touch}
+  .ap-chips{padding:0 14px 10px;flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none}
+  .ap-chips::-webkit-scrollbar{display:none}
+  .ap-chips button{flex:0 0 auto}
+  .ap-input{padding:12px 14px calc(14px + env(safe-area-inset-bottom))}
+  .ap-input input{font-size:16px;padding:12px 14px}
+  .ap-foot{padding:0 14px 10px;font-size:.78rem}
+  .msg{max-width:92%;padding:12px 14px}
+  .voice-controls{flex-wrap:wrap;gap:14px;justify-content:center}
+  .vc-lang{margin:0 auto;width:auto}
+  .work-item{padding:22px}
+  .work-item:hover{transform:none}
+  .work-links{gap:12px}
+  .hero-art{max-width:340px;margin:0 auto}
+  .section{padding-left:18px;padding-right:18px}
+}
+@media (max-width:430px){
+  .hero h1{font-size:clamp(2.15rem,10.5vw,2.9rem)}
+  .h2{font-size:clamp(1.75rem,8vw,2.3rem);max-width:none}
+  .chip{font-size:.85rem;padding:8px 12px}
+  .badge.b1{left:0}.badge.b2{right:0}
+  .stat b{font-size:2.05rem}
+  .voice-avatar{width:140px;height:140px}
+  .lang-toggle button{min-width:38px}
+}
