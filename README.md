@@ -85,3 +85,7 @@ google-chrome --headless=new --no-sandbox --disable-gpu --no-pdf-header-footer \
 ## License
 
 MIT — see [LICENSE](LICENSE).
+
+---
+
+Part of [my always-on agent stack](https://github.com/Amz34) · [Awesome Agent Infrastructure](https://github.com/Amz34/awesome-agent-infrastructure) (135 live-checked building blocks).
